@@ -1,0 +1,338 @@
+/* Add a black background color to the top navigation */
+/* cor pra td ficar topzera: 00a873 */
+
+.titulos{
+    font-family: "Bree Serif", Times, serif;
+    font-weight: 10;
+    font-size: 9em;
+    color: rgb(0, 129, 34);
+    text-shadow: 0px 0px 30px rgba(0, 168, 115);
+    font-size: 30px; 
+}
+@keyframes fechar_janela{
+    from {
+        height: 40%;
+        color: rgba(255, 255, 255, 1);
+    }
+    to {
+        height: 0%;
+        color: rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes abrir_janela{
+    from {
+        height: 0%;
+        color: rgba(255, 255, 255, 0);
+    }
+    to {
+        height: 40%;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes fechar_h1{
+    from {font-size: 9em;}
+    to {font-size: 0em;}
+}
+
+@keyframes abrir_h1{
+    from {font-size: 0em;}
+    to {font-size: 9em;} 
+}
+@keyframes fechar_h2{
+    from {font-size: 2em;}
+    to {font-size: 0em;}
+    
+}
+
+@keyframes abrir_h2{
+    from {font-size: 0em;}
+    to {font-size: 2em;}
+}
+
+@keyframes fechar_botao{
+    from {width: 20%; color: rgba(0, 168, 115, 1);}
+    to {width: 0%; color: rgba(0, 168, 115, 0);} 
+}
+
+@keyframes abrir_botao{
+    from {width: 0%; color: rgba(0, 168, 115, 0);}
+    to {width: 20%; color: rgba(0, 168, 115, 1);} 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style-type: none;
+}
+
+.botao {
+    border-radius: 12px;
+    -webkit-transition-duration: 0.2s;
+    /* Safari */
+    transition-duration: 0.2s;
+    background-color: #00a873;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav {
+    -webkit-transition-duration: 0.2s;
+    /* Safari */
+    transition-duration: 0.2s;
+    font-family: "Bree Serif", Times, serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    top: 0;
+    height: 100%;
+  }
+/* Style the links inside the navigation bar */
+
+nav a {
+    -webkit-transition-duration: 0.2s;
+    /* Safari */
+    transition-duration: 0.2s;
+    float: left;
+    display: block;
+    color: #00a873;
+    text-align: center;
+    vertical-align: middle;
+    padding: 22px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    height: 100%;
+    box-shadow: 0 0 0;
+}
+nav #logo {
+    font-size: 35px;
+    padding-top: 5px;
+    height: 100%;
+}
+/* Change the color of links on hover */
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0 0 0;
+
+}
+/* Add an active class to highlight the current page */
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+    height: 10%;
+}
+/* Hide the link that should open and close the topnav on small screens */
+
+nav .icon {
+    display: none;
+    height: 10%;
+}
+body {
+    /*background-image: url("../img/teamwork.jpg");*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 0px;
+    border: 0px solid #CCCCCC;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400', GradientType=1);
+    left: 0;
+    opacity: 1;
+}
+
+#background {
+    position: absolute;
+    z-index: -1;
+    min-width: 100%;
+    max-width: 100%;
+    top: 0;
+    opacity: 50%;
+}
+
+header {
+    top: 0;
+    position: fixed;
+    height: 65px;
+    width: 100%;
+    z-index: 999;
+}
+section {
+    margin-top: 3.9%;
+}
+
+/*
+.xis {
+    display: block;
+    margin-left: 90%;
+    border-radius: 50%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+*/
+
+.seta img {
+    width: 51px;
+}
+
+.seta {
+    position: absolute;
+    width: 75px;
+    height: 55px;
+    background-color: rgba(0, 0, 0, .5);
+    margin-top: 15%;
+    margin-left: 5%;
+}
+
+#form_login .seta {
+    margin-top: 34%;
+    left: -30%;
+}
+
+.seta:hover {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border: 3px;
+}
+
+#botoes-do-index {
+    margin-top: 13.5%;
+}
+
+.titulo-do-index {
+    font-family: "Bree Serif", Times, serif;
+    font-weight: 10;
+    font-size: 9em;
+    color: #00a873;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+    margin-bottom: 2%;
+}
+
+h2.titulo-do-index {
+    font-size: 2em;
+    color: #d6d6d6;
+}
+
+.botoes-do-index {
+    background-color: rgba(0, 0, 0, .5);
+    color: #00a873;
+    font-size: 30px;
+    border-radius: 0;
+    text-align: center;
+    box-shadow: 0 0 0;
+    margin-left: 1%;
+    width: 20%; }
+
+.botao {
+    font-family: "Bree Serif", Times, serif;
+    background-color: #00a873;
+    color: white;
+}
+
+.botao:hover {
+    background-color: white;
+    /* Green */
+    color: #4CAF50;
+}
+
+.branco {
+    background-color: white;
+    /* Green */
+    color: #4CAF50;
+}
+
+.branco:hover {
+    background-color: #00a873;
+    color: white;
+}
+
+/* Style the links inside the navigation bar */
+
+/* Forms */
+
+.text-input::placeholder {
+    color: rgba(255, 255, 255, .4);
+}
+
+.text-input{
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid;
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+#form_login {
+    display: none;
+    position: absolute;
+    height: 40%;
+    width: 35%;
+    text-align: center;
+    margin: 7% 30% 0% 30%;
+    font-family: "Bree Serif", Times, serif;
+}
+
+#form_registrar {
+    display: none;
+    margin-top: 7%;
+    font-family: "Bree Serif", Times, serif;
+}
+
+#form_registrar h1{
+    color: #ffffff;
+    font-size: 400%;
+    margin-bottom: 10%;
+}
+
+#form_registrar .text-input{
+    font-size: 135%;
+}
+
+#empresas {
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    float: right;
+    margin-right: 5%;
+    width: 45%;
+}
+
+#universitario {
+    text-align: center;
+    float: left;
+    width: 50%;
+}
+
+#empresas .regis{
+    margin-bottom: 27px;
+}
+
+#form_login h1 {
+  color: #ffffff;
+  font-size: 400%;
+  margin-bottom: 10%;
+}
+#form_login form {
+    margin-bottom: 10%;
+}
+#form_login input {
+  box-shadow: 0 0 0;
+  font-weight: 600;
+  font-size: 135%;
+  width: 70%;
+  margin-bottom: 2%;
+}
+#empregu_onepage {
+    width: 100%;
+    height: 100%;
+    margin-top: 20%;
+}
