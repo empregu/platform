@@ -1,6 +1,5 @@
 <?php $this->load->view('header-plataforma', array("nome" => $nome, "nick" => $nick));?>
-    <?php if ($this->session->usuario == $sessao) { ?>
-        <img id="background" src="/assets/img/background.svg">        
+    <?php if ($this->session->usuario == $sessao) { ?>        
     <section>
         <input type="checkbox" id="check_plus">
         <input type="checkbox" id="check_project">

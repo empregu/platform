@@ -12,6 +12,12 @@ html {
     background-color: #F4F3F3;
 }
 
+html {
+    background-image: url("../img/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 header {
     display: flex;
 }
@@ -37,7 +43,6 @@ header {
 .profile img {
     width: 50px;
     margin-top: -2%;
-    margin-left: 0%;
     margin-right: 2%;
     float: left;
 }
@@ -47,7 +52,7 @@ header {
     padding-left: 1%;
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 2%;
 }
 
@@ -59,8 +64,9 @@ header {
 .card .number-text {
     float: left;
     font-family: 'Open Sans', sans-serif;
-    margin-top: 4%;
+    margin-top: 3%;
     margin-left: 13%;
+    margin-bottom: 4%;
 }
 
 .card .number {
@@ -80,7 +86,7 @@ header {
     background-color: rgb(232, 232, 231);
     border: 0px solid;
     padding: 1%;
-    margin-left: 25%;
+    margin-left: 21%;
     margin-top: 3%;
 }
 
@@ -89,7 +95,7 @@ section {
     background-color: rgb(255, 255, 255);
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 7%;
+    margin-top: 3%;
     width: 80%;
     height: 100%;
     border-radius: 15px;

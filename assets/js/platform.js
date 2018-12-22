@@ -29,7 +29,7 @@ function news(){
     my_projects.style.backgroundColor = "rgb(222, 222, 222)";
     my_projects.style.color = "rgb(171, 171, 171)";
     var content = document.getElementById("content");
-    content.src = "news.html"
+    content.src = "";
     var button_plus = document.getElementById("plus");
     button_plus.style.display = "block";
     var new_blog = document.getElementById("new_blog");
@@ -49,7 +49,7 @@ function my_projects(){
     my_projects.style.backgroundColor = "rgb(255, 255, 255)";
     my_projects.style.color = "rgb(93, 93, 93)";
     var content = document.getElementById("content");
-    content.src = "../../un/myprojects"
+    content.src = "";
     var button_plus = document.getElementById("plus");
     button_plus.style.display = "block";
     var new_blog = document.getElementById("new_blog");
