@@ -9,13 +9,13 @@
 		<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/assets/css/platform.css">
         <link rel='shortcut icon' href='/assets/img/empregu_logo.png' />
-        <script src="/assets/js/platform.js"></script>        
+        <script src="/assets/js/platform.js"></script>
 		<script src="/assets/js/mainn.js"></script>
 	</head>
 	<body>
     <header>
             <div class="card profile">
-                <img src="/assets/img/un/<?php echo $nick ?>" alt="image">
+                <img class="imgperfil" src="/assets/img/un/<?php echo $nick ?>" alt="image">
                 <p>
                     <?php echo $nome ?><br>
                     18 Years<br>

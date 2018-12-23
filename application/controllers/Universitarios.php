@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			if (isset($input["submit"])) {
 
-				$this->form_validation->set_rules('nome_projeto', 'Nome Projeto', 'trim|alpha_numeric_spaces|min_length[3]|max_length[400]');
+				$this->form_validation->set_rules('nome_projeto', 'Nome Projeto', 'trim|required|alpha_numeric_spaces|min_length[3]|max_length[400]');
 				$existe_projeto = $this->projetos->existe_nick(gerarNick($input["nome_projeto"]));
 
 				if ($this->form_validation->run() == false) {
@@ -71,12 +71,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$participa_nick = $this->universitarios->pegar_participa_sessao($this->session->usuario);
 		$participa_nick = explode(',', $participa_nick);
 		array_shift($participa_nick);
-		$participa = [];/*
+		$participa = [];
 		foreach ($participa_nick as $key => $value) {
 			array_push($participa, $this->projetos->pegar_nome_nick($value));
-		}*/
+		}
 		$dados["participa"] = $participa_nick;
-		
+
 		if ($existe_universitario) {
 			$this->load->view('meusprojetos', $dados);
 		} else {
@@ -119,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$this->load->model('universitarios_model', 'universitarios');
 		// checar a sessão no banco de dados
 		$existe_universitario = $this->universitarios->existe_sessao($this->session->usuario);
-		
+
 		if ($existe_universitario) {
 			// Liberar a edição do perfil do universitário
 

@@ -1,4 +1,6 @@
-<?php foreach($participa as $projeto) { ?>
+<?php
+print_r($participa);
+foreach($participa as $projeto) { ?>
 <div>
 <?php echo $projeto; ?>
 <button>Editar</button>

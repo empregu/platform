@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Shanti');
-
+.imgperfil
 * {
     box-sizing: border-box;
     padding: 0;
@@ -28,7 +28,7 @@ header {
     min-height: 100%;
     position: absolute;
     z-index: -1;
-    
+
 }
 
 .card {
@@ -45,6 +45,8 @@ header {
     margin-top: -2%;
     margin-right: 2%;
     float: left;
+    border-radius: 50%;
+
 }
 
 .profile {
