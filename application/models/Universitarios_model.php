@@ -67,6 +67,10 @@ class Universitarios_model extends CI_Model {
 		$codigo_sql = "update universitarios set participa = '$participa' where sessao = '$sessao';";
 		$this->db->query($codigo_sql);
 	}
+	public function setar_participa_nick($participa, $nick) {
+		$codigo_sql = "update universitarios set participa = '$participa' where nick = '$nick';";
+		$this->db->query($codigo_sql);
+	}
 	public function setar_sessao_login($sessao, $email, $senha) {
 		$codigo_sql = "update universitarios set sessao = '$sessao' where email = '$email' and senha = '$senha';";
 		$this->db->query($codigo_sql);

@@ -32,8 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			if (isset($input["submit"])) {
 
-				$this->form_validation->set_rules('nome_projeto', 'Nome Projeto', 'trim|min_length[3]|max_length[400]');
-				$existe_projeto = $this->projetos->existe_nome($input["nome_projeto"]);
+				$this->form_validation->set_rules('nome_projeto', 'Nome Projeto', 'trim|alpha_numeric_spaces|min_length[3]|max_length[400]');
+				$existe_projeto = $this->projetos->existe_nick(gerarNick($input["nome_projeto"]));
 
 				if ($this->form_validation->run() == false) {
 					// Ocorreram problemas com o input do usuário
@@ -59,6 +59,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		} else {
 			// Informação não bateu com o nosso banco de dados
 			echo "Universitario(a) não encontrado(a) em nosso sistema.";
+		}
+	}
+
+	public function meusprojetos() {
+		// Carregando os models
+		$this->load->model('universitarios_model', 'universitarios');
+		$this->load->model('projetos_model', 'projetos');
+		// checar a sessão no banco de dados
+		$existe_universitario = $this->universitarios->existe_sessao($this->session->usuario);
+		$participa_nick = $this->universitarios->pegar_participa_sessao($this->session->usuario);
+		$participa_nick = explode(',', $participa_nick);
+		array_shift($participa_nick);
+		$participa = [];/*
+		foreach ($participa_nick as $key => $value) {
+			array_push($participa, $this->projetos->pegar_nome_nick($value));
+		}*/
+		$dados["participa"] = $participa_nick;
+		
+		if ($existe_universitario) {
+			$this->load->view('meusprojetos', $dados);
+		} else {
+			$dados['formerror'] = "Você precisa estar logado para editar seu perfil.";
+		}
+	}
+
+	public function deletarprojeto() {
+		// Recebendo o argumento da url
+		$projeto_para_deletar = $this->uri->segment(3);
+		// Carregando os models
+		$this->load->model('universitarios_model', 'universitarios');
+		$this->load->model('projetos_model', 'projetos');
+		// checar a sessão no banco de dados
+		$existe_universitario = $this->universitarios->existe_sessao($this->session->usuario);
+		if ($existe_universitario) {
+			$nick_universitario = $this->universitarios->pegar_nick_sessao($this->session->usuario);
+			$admins_projeto = explode(',', $this->projetos->pegar_admins_nick($projeto_para_deletar));
+			if (in_array($nick_universitario, $admins_projeto)) {
+				# deletar o projeto de todos os participantes
+				$participantes = explode(',', $this->projetos->pegar_participantes_nick($projeto_para_deletar));
+				array_shift($participantes);
+				foreach ($participantes as $key => $value) {
+					$participa = $this->universitarios->pegar_participa_nick($value);
+					$participa = str_replace(",".$projeto_para_deletar, "", $participa);
+					$this->universitarios->setar_participa_nick($participa, $value);
+				}
+				# deletar o projeto em si
+				$this->projetos->deletar_nick($projeto_para_deletar);
+			}
 		}
 	}
 

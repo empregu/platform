@@ -27,7 +27,30 @@ class Projetos_model extends CI_Model {
 			return False;
 		}
 	}
-
+	public function existe_nick($nick) {
+		$codigo_sql = "select id from projetos where nick = '$nick';";
+		if ($this->db->query($codigo_sql)->num_rows() != 0) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+	public function pegar_nome_nick($nick) {
+		$codigo_sql = "select nome from projetos where nick = '$nick';";
+		return $this->db->query($codigo_sql)->result()[0]->nome;
+	}
+	public function pegar_admins_nick($nick) {
+		$codigo_sql = "select admins from projetos where nick = '$nick';";
+		return $this->db->query($codigo_sql)->result()[0]->admins;
+	}
+	public function pegar_participantes_nick($nick) {
+		$codigo_sql = "select participantes from projetos where nick = '$nick';";
+		return $this->db->query($codigo_sql)->result()[0]->participantes;
+	}
+	public function deletar_nick($nick) {
+		$codigo_sql = "delete from projetos where nick = '$nick';";
+		$this->db->query($codigo_sql);
+	}
 	
 }
 

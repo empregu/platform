@@ -16,6 +16,8 @@
             </form>
         </div>
     </section>
+    <!-- COLOQUEI ESSE BOTAO AQUI SO PQ TO USANDO MSM, PODE TIRAR DPS -->
+    <button class="botao" onclick="window.location.href='../welcome/unset_session'">Fechar sessão</button>
 
     
 <?php if (isset($error)) {echo $error;} ?>

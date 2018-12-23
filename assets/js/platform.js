@@ -49,7 +49,7 @@ function my_projects(){
     my_projects.style.backgroundColor = "rgb(255, 255, 255)";
     my_projects.style.color = "rgb(93, 93, 93)";
     var content = document.getElementById("content");
-    content.src = "";
+    content.src = "../../un/meusprojetos";
     var button_plus = document.getElementById("plus");
     button_plus.style.display = "block";
     var new_blog = document.getElementById("new_blog");
