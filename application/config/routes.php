@@ -49,16 +49,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'views/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['un'] = 'welcome';
-$route['em'] = 'welcome';
-$route['un/meusprojetos'] = 'universitarios/meusprojetos';
-$route['un/deletarprojeto/(:any)'] = 'universitarios/deletarprojeto/$1';
-$route['un/editarperfil'] = 'universitarios/editarperfil/';
-$route['em/editarperfil'] = 'empresas/editarperfil/';
-$route['un/upload'] = 'universitarios/upload';
-$route['em/upload'] = 'empresas/upload';
-$route['un/(:any)'] = 'universitarios/un/$1';
-$route['em/(:any)'] = 'empresas/em/$1';
+
+// AJAX ROUTES
+$route['ajax_logar_universitario'] = 'login_universitario/logar';
+$route['ajax_deslogar_universitario'] = 'login_universitario/deslogar';
+$route['ajax_registrar_universitario'] = 'login_universitario/registrar';
+
+// VIEWS ROUTES
+$route['logar'] = 'views/logar';
+$route['registrar'] = 'views/registrar';
+$route['home'] = 'views/home';
+
+$route['un/(:any)'] = 'views/visualizar_perfil_universitario/$1';
