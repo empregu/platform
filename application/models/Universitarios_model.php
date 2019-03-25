@@ -16,13 +16,13 @@ class Universitarios_model extends CI_Model {
             cpf varchar(11),
             apelido varchar(50),
             admin boolean default false,
-            descricao text,
+            descricao varchar(700) default 'Um estudante.',
             email varchar(256),
             verificacao_email boolean default false,
             senha varchar(32),
             foto varchar(50) default '/assets/img/usuario.png',
             data_cadastro date
-        )");
+        );");
         
     }
 
@@ -54,6 +54,17 @@ class Universitarios_model extends CI_Model {
         } else {
             return False;
         }
+    }
+
+    public function setar_sessao_apelido($sessao, $apelido) {
+        $this->db->set('sessao', $sessao);
+        $this->db->where('apelido', $apelido);
+        $this->db->update('universitarios');
+    }
+    public function setar_sessao_email($sessao, $email) {
+        $this->db->set('sessao', $sessao);
+        $this->db->where('email', $email);
+        $this->db->update('universitarios');
     }
 }
 ?>
